@@ -9,6 +9,19 @@ module.exports = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-    }
-  }
+    },
+  },
+  babel: async (options) => ({
+    ...options,
+    plugins: [
+      [
+        '@babel/plugin-transform-react-jsx',
+        {
+          importSource: 'theme-ui', // or '@theme-ui/core'
+          runtime: 'automatic',
+          throwIfNamespace: false,
+        },
+      ],
+    ],
+  }),
 };
