@@ -48,7 +48,7 @@ const getBaseButtonStyles = (size: 'small' | 'medium' | 'large') => {
           height: '1.5rem',
         },
         labelBase: {
-          padding: '0 0 0 1.25rem',
+          padding: '0 0 0 1rem',
         },
       };
     }
