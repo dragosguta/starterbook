@@ -6,16 +6,16 @@ export default {
   title: 'Example/Button',
   component: Button,
   argTypes: {
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => console.log(e),
+    onClick: (e: React.MouseEvent<HTMLDivElement>) => console.log(e),
   },
 };
 
 export const Primary = (args: ButtonProps) => {
-  return <Button {...args} />;
+  return <Button {...args}>hello world</Button>;
 };
 
 Primary.args = {
-  size: 'large',
-  label: 'Button',
-  primary: true,
+  size: 'small',
+  kind: 'primary',
+  isLoading: false,
 };
