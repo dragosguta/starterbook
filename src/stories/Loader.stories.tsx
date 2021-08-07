@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grower } from '../components/Grower';
-import { Spinner } from '../components/Spinner';
+import { Spinner, Grower } from '../components/Loader';
 
 export default {
   title: 'Example/Loader',
