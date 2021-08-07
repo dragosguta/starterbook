@@ -35,5 +35,12 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "semi": true,
+    "useTabs": false
   }
 }
