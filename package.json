@@ -1,7 +1,7 @@
 {
-  "name": "@drgs/react-components",
+  "name": "@drgs/react-starter",
   "version": "0.0.1",
-  "description": "Reusable React components with a black/white theme",
+  "description": "A starter for React components library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
