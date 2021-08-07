@@ -1,11 +1,20 @@
 ## React Components
-A boilerplate library starter for React components, mainly used for educational purposes, but also published to NPM.
+
+A set of React components styled with Theme UI. Current theme is a black/white high contrast theme.
 
 ## Main technologies
-- [Storybook](https://storybook.js.org/)
-- [Rollupjs](https://rollupjs.org/guide/en/)
+
+- [StorybookJS](https://storybook.js.org/)
+- [RollupJS](https://rollupjs.org/guide/en/)
+- [ThemeUI](https://theme-ui.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## How to use this
-Feel free to clone this repository and use it as a starter for React based libraries.
 
-Alternatively, if you'd like to use the components, you can also `npm install` the library and import each component individually.
+### Development
+
+Model components in StorybookJS, start storybook with `npm run storybook`. Create the component and then create the story.
+
+### Installation
+
+Install this library via `npm i -S @drgs/react-components` and import the components as you normally would.
