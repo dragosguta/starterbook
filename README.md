@@ -11,4 +11,4 @@ A boilerplate library starter for React components.
 
 ## How to use this
 
-Feel free to clone this repository and use it as a starter for React based libraries. This version is set up with Theme UI, supporting different themes based on the `src/theme.ts` file. Additionally, this version also includes Typescript.
+Feel free to clone this repository and use it as a starter for React based libraries. This version is set up with Theme UI, supporting different themes based on the `src/theme.ts` file. Additionally, this version is also set up with Typescript.
