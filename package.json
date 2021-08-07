@@ -1,7 +1,7 @@
 {
   "name": "@drgs/react-starter",
   "version": "0.0.1",
-  "description": "A starter for React components library",
+  "description": "A starter to build a React components library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
