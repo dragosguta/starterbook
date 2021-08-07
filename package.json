@@ -1,7 +1,7 @@
 {
   "name": "@drgs/react-components",
   "version": "0.0.1",
-  "description": "Reusable React components for educational purposes",
+  "description": "Reusable React components with a black/white theme",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
