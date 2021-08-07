@@ -1,30 +1,25 @@
 import React from 'react';
-import './button.css';
+
+import { Button as ThemedButton } from 'theme-ui';
 
 export interface ButtonProps {
   primary: boolean;
-  backgroundColor?: React.CSSProperties;
   size: 'small' | 'medium' | 'large';
   label: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  primary,
-  backgroundColor,
-  size,
-  label,
-  onClick
-}) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button: React.FC<ButtonProps> = ({ primary, label, onClick }) => {
   return (
-    <button
+    <ThemedButton
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor ? backgroundColor : undefined }
       onClick={onClick}
+      sx={{
+        backgroundColor: primary ? 'primary' : 'secondary',
+        cursor: 'pointer',
+      }}
     >
       {label}
-    </button>
+    </ThemedButton>
   );
 };
