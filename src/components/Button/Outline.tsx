@@ -3,8 +3,7 @@ import React from 'react';
 import { Box as ThemedBox, ThemeUIStyleObject } from 'theme-ui';
 import { Button as ThemedButton } from 'theme-ui';
 
-import { Grower } from '../Loader';
-import { ButtonProps } from './base';
+import { GrowLoader } from '../Loader';
 
 const buttonSizes: { [key: string]: ThemeUIStyleObject } = {
   small: {
@@ -63,20 +62,28 @@ const labelSizes: { [key: string]: ThemeUIStyleObject } = {
   },
 };
 
-export function Outline({
+export interface OutlineButtonProps {
+  size?: 'small' | 'medium' | 'large';
+  isLoading?: boolean;
+  disabled?: boolean;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  children: JSX.Element | String;
+}
+
+export function OutlineButton({
   size,
   children,
   disabled,
   onClick,
   isLoading,
-}: ButtonProps) {
+}: OutlineButtonProps) {
   const isDisabled = isLoading ? true : disabled;
   return (
     <ThemedButton
       disabled={isDisabled}
       onClick={onClick}
       sx={{
-        ...buttonSizes[size],
+        ...buttonSizes[size ?? 'small'],
         borderRadius: 0,
         background: 'transparent',
         display: 'grid',
@@ -91,6 +98,7 @@ export function Outline({
             transition: 'border 0.15s',
           },
         },
+        ...(!isDisabled ? { ':active': { backgroundColor: 'hinted' } } : {}),
         ':focus': {
           boxShadow: 'inset 0 0 0 0.0625rem',
         },
@@ -116,8 +124,8 @@ export function Outline({
       >
         {isLoading ? (
           <>
-            <Grower csx={loaderSizes[size]} />
-            <ThemedBox sx={labelSizes[size]}>{children}</ThemedBox>
+            <GrowLoader csx={loaderSizes[size ?? 'small']} />
+            <ThemedBox sx={labelSizes[size ?? 'small']}>{children}</ThemedBox>
           </>
         ) : (
           children

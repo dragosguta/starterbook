@@ -34,6 +34,8 @@
     "**/build",
     "**/dist",
     "**/*.md",
-    "**/rollup.config.js"
+    "**/rollup.config.js",
+    "**/.storybook",
+    "**/public"
   ]
 }

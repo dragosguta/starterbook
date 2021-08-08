@@ -2,27 +2,44 @@ import React from 'react';
 
 import { IconButton as ThemedIconButton, ThemeUIStyleObject } from 'theme-ui';
 
-import { Grower } from '../Loader';
-import { ButtonProps } from './base';
+import { GrowLoader } from '../Loader';
 
 const buttonSizes: { [key: string]: ThemeUIStyleObject } = {
   small: {
     width: 48,
     height: 48,
-    border: '0.1875rem solid',
-    borderColor: 'primary',
+    p: 2,
+    ':focus': {
+      boxShadow: 'inset 0 0 0 0.125rem',
+    },
+    ':focus-visible': {
+      boxShadow: 'inset 0 0 0 0.125rem',
+      outline: 'none',
+    },
   },
   medium: {
     width: 72,
     height: 72,
-    border: '0.25rem solid',
-    borderColor: 'primary',
+    p: 3,
+    ':focus': {
+      boxShadow: 'inset 0 0 0 0.1875rem',
+    },
+    ':focus-visible': {
+      boxShadow: 'inset 0 0 0 0.1875rem',
+      outline: 'none',
+    },
   },
   large: {
     width: 96,
     height: 96,
-    border: '0.5rem solid',
-    borderColor: 'primary',
+    p: 4,
+    ':focus': {
+      boxShadow: 'inset 0 0 0 0.25rem',
+    },
+    ':focus-visible': {
+      boxShadow: 'inset 0 0 0 0.25rem',
+      outline: 'none',
+    },
   },
 };
 
@@ -41,41 +58,56 @@ const loaderSizes: { [key: string]: ThemeUIStyleObject } = {
   },
 };
 
-export function Icon({
+export interface IconButtonProps {
+  size?: 'small' | 'medium' | 'large';
+  isLoading?: boolean;
+  disabled?: boolean;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  children: JSX.Element | String;
+}
+
+export function IconButton({
   size,
   children,
   disabled,
   onClick,
   isLoading,
-  outline,
-}: ButtonProps & { outline?: boolean }) {
+}: IconButtonProps) {
   const isDisabled = isLoading ? true : disabled;
-  const hasOutline = outline === undefined ? true : outline;
   return (
     <ThemedIconButton
       disabled={isDisabled}
       onClick={onClick}
       sx={{
-        ...buttonSizes[size],
-        ...(!hasOutline ? { border: 'none' } : {}),
+        ...buttonSizes[size ?? 'small'],
         color: 'primary',
         cursor: 'pointer',
         borderRadius: 0,
         '@media (hover: hover) and (pointer: fine)': {
-          '&:hover': {
-            color: 'secondary',
-            borderColor: 'secondary',
-            transition: 'border 0.15s',
-          },
+          ...(!isDisabled
+            ? {
+                '&:hover': {
+                  backgroundColor: 'hinted',
+                  transition: 'background-color 0.15s',
+                },
+              }
+            : {}),
         },
+        ...(!isDisabled
+          ? {
+              ':active': {
+                backgroundColor: 'rgba(0,0,0,0.09)',
+              },
+            }
+          : {}),
         ':disabled': {
           cursor: 'not-allowed',
           color: 'muted',
-          borderColor: 'muted',
         },
+        transition: 'box-shadow 0.15s',
       }}
     >
-      {isLoading ? <Grower csx={loaderSizes[size]} /> : children}
+      {isLoading ? <GrowLoader csx={loaderSizes[size ?? 'small']} /> : children}
     </ThemedIconButton>
   );
 }

@@ -13,7 +13,7 @@ const grow = keyframes`
   }
 `;
 
-export function Grower({ csx }: { csx?: ThemeUIStyleObject }) {
+export function GrowLoader({ csx }: { csx?: ThemeUIStyleObject }) {
   return (
     <ThemedBox
       as="div"

@@ -9,7 +9,7 @@ const spin = keyframes`
   }
 `;
 
-export function Spinner({ csx }: { csx?: ThemeUIStyleObject }) {
+export function SpinLoader({ csx }: { csx?: ThemeUIStyleObject }) {
   return (
     <ThemedBox
       as="div"

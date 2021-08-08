@@ -30,7 +30,6 @@ export function Dimmer({ csx }: { csx?: ThemeUIStyleObject }) {
     >
       <Sun
         csx={{
-          transform: 'scale(2)',
           transition: 'color 0.15s',
           '@media (hover: hover) and (pointer: fine)': {
             '&:hover': {

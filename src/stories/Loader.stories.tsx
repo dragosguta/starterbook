@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Spinner, Grower } from '../components/Loader';
+import { SpinLoader, GrowLoader } from '../components/Loader';
 
 export default {
   title: 'Example/Loader',
 };
 
 export const Grow = () => {
-  return <Grower />;
+  return <GrowLoader />;
 };
 
 export const Spin = () => {
-  return <Spinner />;
+  return <SpinLoader />;
 };
