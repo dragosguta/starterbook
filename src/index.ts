@@ -6,3 +6,4 @@ export * from './components/Input';
 export * from './components/Loader';
 export * from './components/Menu';
 export * from './components/Tag';
+export * from './components/Theme';

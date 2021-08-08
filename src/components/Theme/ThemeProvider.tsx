@@ -1,4 +1,6 @@
-import { Theme } from 'theme-ui';
+import React from 'react';
+
+import { ThemeProvider as ThemeUIThemeProvider, Theme } from 'theme-ui';
 
 const theme: Theme = {
   space: [0, 4, 8, 16, 24, 32, 48, 64, 96, 128, 172, 256, 512],
@@ -243,4 +245,13 @@ const theme: Theme = {
   },
 };
 
-export default theme;
+export function ThemeProvider(props: {
+  children: JSX.Element | JSX.Element[];
+  theme?: any;
+}) {
+  return (
+    <ThemeUIThemeProvider theme={props.theme ? props.theme : theme}>
+      {props.children}
+    </ThemeUIThemeProvider>
+  );
+}
