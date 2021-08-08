@@ -1,7 +1,4 @@
-import { ThemeProvider } from 'theme-ui';
-import { Global, css } from '@emotion/react';
-
-import theme from '../src/theme';
+import { ThemeProvider, GlobalStyles } from '../src/components/Theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,35 +12,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
-      <Global
-        styles={css`
-          @font-face {
-            font-family: relative-book-pro;
-            font-style: normal;
-            font-weight: 400;
-            src: url(/relative-book-pro.woff2);
-          }
-          @font-face {
-            font-family: relative-medium-pro;
-            font-style: normal;
-            font-weight: 400;
-            src: url(/relative-medium-pro.woff2);
-          }
-          @font-face {
-            fontfamily: relative-mono-11-pitch-pro;
-            fontstyle: normal;
-            fontweight: 400;
-            src: url(/relative-mono-11-pitch-pro.woff2);
-          }
-          @font-face {
-            fontfamily: relative-faux-book-pro;
-            fontstyle: normal;
-            fontweight: 400;
-            src: url(/relative-faux-book-pro.woff2);
-          }
-        `}
-      />
+    <ThemeProvider>
+      <GlobalStyles />
       <div style={{ margin: '3rem' }}>
         <Story />
       </div>
