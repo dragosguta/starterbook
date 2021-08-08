@@ -1,6 +1,6 @@
 {
   "name": "@drgs/react-components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Reusable React components with a black/white high constrast theme",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
